@@ -1,12 +1,14 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from '../screens/HomeScreen';
 import CommunitiesScreen from '../screens/CommunitiesScreen';
 import CreateScreen from '../screens/CreateScreen';
+import ChatScreen from '../screens/ChatScreen';
+import InboxScreen from '../screens/InboxScreen';
+import {Text} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,24 +25,36 @@ const BottomTabNavigation = () => {
         name="DrawerHome"
         component={HomeScreen}
         options={{
-          tabBarIcon: () => <Entypo name="home" size={24} color={'#000'} />,
-          tabBarLabel: 'Home',
-          tabBarLabelStyle: {
-            color: '#000',
-          },
+          tabBarIcon: ({focused}) => (
+            <Ionicons
+              name={focused ? 'home' : 'home-outline'}
+              size={24}
+              color={focused ? '#000' : '#676767'}
+            />
+          ),
+          tabBarLabel: ({focused}) => (
+            <Text style={{color: focused ? '#000' : '#676767', fontSize: 10}}>
+              Home
+            </Text>
+          ),
         }}
       />
       <Tab.Screen
         name="Communities"
         component={CommunitiesScreen}
         options={{
-          tabBarIcon: () => (
-            <Ionicons name="people-circle-outline" size={24} color={'#000'} />
+          tabBarIcon: ({focused}) => (
+            <Ionicons
+              name="people-circle-outline"
+              size={24}
+              color={focused ? '#000' : '#676767'}
+            />
           ),
-          tabBarLabel: 'Communities',
-          tabBarLabelStyle: {
-            color: '#000',
-          },
+          tabBarLabel: ({focused}) => (
+            <Text style={{color: focused ? '#000' : '#676767', fontSize: 10}}>
+              Communities
+            </Text>
+          ),
         }}
       />
       <Tab.Screen
@@ -48,10 +62,49 @@ const BottomTabNavigation = () => {
         component={CreateScreen}
         options={{
           tabBarIcon: () => <AntDesign name="plus" size={24} color={'#000'} />,
-          tabBarLabel: 'Create',
-          tabBarLabelStyle: {
-            color: '#000',
-          },
+          tabBarLabel: ({focused}) => (
+            <Text style={{color: focused ? '#000' : '#676767', fontSize: 10}}>
+              Create
+            </Text>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Chat"
+        component={ChatScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <Ionicons
+              name={
+                focused ? 'chatbubble-ellipses' : 'chatbubble-ellipses-outline'
+              }
+              size={24}
+              color={'#000'}
+            />
+          ),
+          tabBarLabel: ({focused}) => (
+            <Text style={{color: focused ? '#000' : '#676767', fontSize: 10}}>
+              Chat
+            </Text>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Inbox"
+        component={InboxScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <FontAwesome
+              name={focused ? 'bell' : 'bell-o'}
+              size={24}
+              color={'#000'}
+            />
+          ),
+          tabBarLabel: ({focused}) => (
+            <Text style={{color: focused ? '#000' : '#676767', fontSize: 10}}>
+              Inbox
+            </Text>
+          ),
         }}
       />
     </Tab.Navigator>
