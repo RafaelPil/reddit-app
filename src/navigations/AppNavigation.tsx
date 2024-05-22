@@ -3,7 +3,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTabNavigation from './BottomTabNavigation';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import DrawerNavigation from './DrawerNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,7 @@ const AppNavigation = () => {
         <Stack.Navigator
           screenOptions={{headerShown: false}}
           initialRouteName="Main">
-          <Stack.Screen name="Main" component={BottomTabNavigation} />
+          <Stack.Screen name="Main" component={DrawerNavigation} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
