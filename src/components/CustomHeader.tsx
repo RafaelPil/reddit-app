@@ -9,13 +9,13 @@ const CustomHeader = () => {
   const navigation = useNavigation();
 
   return (
-    <View className="flex-row items-center justify-between p-4 bg-white">
+    <View className="flex-row items-center justify-between px-4 py-2 bg-white border-b-[0.5px] border-slate-100">
       <FocusedStatusBar
         barStyle="dark-content"
         backgroundColor="#fff"
         transLucent={true}
       />
-      <View className="flex-row">
+      <View className="flex-row items-start">
         <Pressable
           onPress={() => navigation.getParent('LeftDrawer').openDrawer()}>
           <Feather name="menu" size={24} color="black" />
