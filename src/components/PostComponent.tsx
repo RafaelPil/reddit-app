@@ -29,7 +29,7 @@ const PostComponent = () => {
             </Text>
           </View>
           {/* Right Side dots Row */}
-          <Entypo name="dots-three-horizontal" size={18} />
+          <Entypo name="dots-three-horizontal" size={18} color={'#1e293b'} />
         </View>
 
         {/* Title/Body/Image */}
