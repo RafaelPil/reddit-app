@@ -4,11 +4,9 @@ import {useNavigation} from '@react-navigation/native';
 import CustomHeader from '../components/CustomHeader';
 import PostComponent from '../components/PostComponent';
 import {dummyRestaurantsData} from '../assets/data/dummyPostData';
-import { Post } from '../../types';
+import {Post} from '../../types';
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
-
   return (
     <>
       {/* Header */}
@@ -17,7 +15,7 @@ const HomeScreen = () => {
       <FlatList
         data={dummyRestaurantsData}
         keyExtractor={k => k.id}
-        renderItem={({item}: { item: Post }) => (
+        renderItem={({item}: {item: Post}) => (
           <PostComponent
             redditUsername={item.redditUsername}
             title={item.title}

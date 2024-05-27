@@ -15,6 +15,8 @@ const CustomHeader = () => {
         backgroundColor="#fff"
         transLucent={true}
       />
+
+      {/* Left */}
       <View className="flex-row items-start">
         <Pressable
           onPress={() => navigation.getParent('LeftDrawer').openDrawer()}>
@@ -26,6 +28,8 @@ const CustomHeader = () => {
           resizeMode="contain"
         />
       </View>
+
+      {/* Right */}
       <View className="flex-row items-center">
         <AntDesign name="search1" size={24} color="black" />
         <Pressable
@@ -36,6 +40,10 @@ const CustomHeader = () => {
             }}
             className="w-8 h-8 rounded-full ml-6"
           />
+          {/* Online status */}
+          <View className="w-3 h-3 bg-green-500 rounded-full absolute bottom-0 left-5">
+            <View className="w-full h-full rounded-full border-2 border-white" />
+          </View>
         </Pressable>
       </View>
     </View>
