@@ -15,7 +15,7 @@ export type Post = {
 export type PostComponentProps = {
   userProfileImage: string;
   redditUsername: string;
-  promotedUsername: string;
+  // promotedUsername: string;
   title: string;
   body: string;
   imageUrl: string;
