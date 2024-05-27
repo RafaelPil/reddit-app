@@ -1,11 +1,19 @@
-## Step 1: Intall Node Packages
+## Getting Started
+
+1. Clone the repo
+```bash
+git clone https://github.com/RafaelPil/reddit-app.git
+```
+
+2. Intall Node Packages
 
 ```bash
 # using npm
+# cd ./reddit-app
 npm install
 ```
 
-## Step 2: Start your Application
+3. Start your Application
 
 ```bash
 # using npm
