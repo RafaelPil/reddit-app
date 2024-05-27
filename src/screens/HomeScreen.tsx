@@ -1,8 +1,10 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, FlatList} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import CustomHeader from '../components/CustomHeader';
 import PostComponent from '../components/PostComponent';
+import {dummyRestaurantsData} from '../assets/data/dummyPostData';
+import { Post } from '../../types';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -11,7 +13,22 @@ const HomeScreen = () => {
     <>
       {/* Header */}
       <CustomHeader />
-      <PostComponent />
+
+      <FlatList
+        data={dummyRestaurantsData}
+        keyExtractor={k => k.id}
+        renderItem={({item}: { item: Post }) => (
+          <PostComponent
+            redditUsername={item.redditUsername}
+            title={item.title}
+            body={item.body}
+            imageUrl={item.imageUrl}
+            likesCount={item.likesCount}
+            commentsCount={item.commentsCount}
+            userProfileImage={item.userProfileImage}
+          />
+        )}
+      />
     </>
   );
 };
