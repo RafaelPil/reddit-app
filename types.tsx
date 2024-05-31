@@ -25,8 +25,8 @@ export type PostComponentProps = {
 };
 
 export type RootStackParamList = {
-  PostComponent: undefined;
-  PostDetailed: {
+  // PostComponent: undefined;
+  PostDetails: {
     id: string;
   };
 };

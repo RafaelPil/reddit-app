@@ -22,7 +22,7 @@ const PostComponent = (props: PostComponentProps) => {
   } = props;
 
   const handleToDetailsScreen = () => {
-    navigation.navigate('PostDetailed', {
+    navigation.navigate('PostDetails', {
       id,
     });
   };
