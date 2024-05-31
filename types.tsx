@@ -13,6 +13,7 @@ export type Post = {
 };
 
 export type PostComponentProps = {
+  id: string;
   userProfileImage: string;
   redditUsername: string;
   // promotedUsername: string;
@@ -26,12 +27,6 @@ export type PostComponentProps = {
 export type RootStackParamList = {
   PostComponent: undefined;
   PostDetailed: {
-    redditUsername: string;
-    title: string;
-    body: string;
-    imageUrl: string;
-    likesCount: number;
-    commentsCount: number;
-    userProfileImage: string;
+    id: string;
   };
 };

@@ -11,6 +11,7 @@ const PostComponent = (props: PostComponentProps) => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   const {
+    id,
     redditUsername,
     title,
     body,
@@ -22,13 +23,7 @@ const PostComponent = (props: PostComponentProps) => {
 
   const handleToDetailsScreen = () => {
     navigation.navigate('PostDetailed', {
-      redditUsername,
-      title,
-      body,
-      imageUrl,
-      likesCount,
-      commentsCount,
-      userProfileImage,
+      id,
     });
   };
 

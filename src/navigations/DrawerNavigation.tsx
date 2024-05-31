@@ -2,7 +2,7 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import BottomTabNavigation from './BottomTabNavigation';
 import PostDetailedScreen from '../screens/PostDetailedScreen';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const LeftDrawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();

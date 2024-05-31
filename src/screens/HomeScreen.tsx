@@ -17,6 +17,7 @@ const HomeScreen = () => {
         keyExtractor={k => k.id}
         renderItem={({item}: {item: Post}) => (
           <PostComponent
+            id={item.id}
             userProfileImage={item.userProfileImage}
             redditUsername={item.redditUsername}
             title={item.title}

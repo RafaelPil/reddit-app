@@ -32,7 +32,7 @@ const CustomDetailedHeader = () => {
         <AntDesign name="search1" size={24} color="white" />
         {/* Svg filter */}
         <View className="ml-3 mr-3">
-          <FilterIcon width={30} height={30} />
+          <FilterIcon width={32} height={32} />
         </View>
         {/* dots */}
         <Entypo name="dots-three-horizontal" size={18} color={'#fff'} />
