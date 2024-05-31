@@ -17,13 +17,13 @@ const HomeScreen = () => {
         keyExtractor={k => k.id}
         renderItem={({item}: {item: Post}) => (
           <PostComponent
+            userProfileImage={item.userProfileImage}
             redditUsername={item.redditUsername}
             title={item.title}
             body={item.body}
             imageUrl={item.imageUrl}
             likesCount={item.likesCount}
             commentsCount={item.commentsCount}
-            userProfileImage={item.userProfileImage}
           />
         )}
       />

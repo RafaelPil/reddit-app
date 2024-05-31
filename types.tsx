@@ -22,3 +22,16 @@ export type PostComponentProps = {
   likesCount: number;
   commentsCount: number;
 };
+
+export type RootStackParamList = {
+  PostComponent: undefined;
+  PostDetailed: {
+    redditUsername: string;
+    title: string;
+    body: string;
+    imageUrl: string;
+    likesCount: number;
+    commentsCount: number;
+    userProfileImage: string;
+  };
+};

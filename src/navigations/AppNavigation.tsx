@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTabNavigation from './BottomTabNavigation';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import DrawerNavigation from './DrawerNavigation';
+import PostDetailedScreen from '../screens/PostDetailedScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ const AppNavigation = () => {
           screenOptions={{headerShown: false}}
           initialRouteName="Main">
           <Stack.Screen name="Main" component={DrawerNavigation} />
+         
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>

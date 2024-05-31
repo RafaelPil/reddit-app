@@ -1,38 +1,44 @@
 import React from 'react';
 import {View, Image, Pressable} from 'react-native';
-import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
 import {useNavigation} from '@react-navigation/native';
 import CustomStatusBar from './CustomStatusBar';
+import FilterIcon from '../assets/img/filter-icon.svg';
 
-const CustomHeader = () => {
+const CustomDetailedHeader = () => {
   const navigation = useNavigation();
 
   return (
-    <View className="flex-row items-center justify-between px-4 py-2 bg-white border-b-[0.5px] border-slate-100">
+    <View className="flex-row items-center justify-between px-4 py-2 bg-[#282828] border-b-[0.5px] border-slate-100">
       <CustomStatusBar
-        barStyle="dark-content"
-        backgroundColor="#fff"
+        barStyle="light-content"
+        backgroundColor="#282828"
         transLucent={true}
       />
 
       {/* Left */}
-      <View className="flex-row items-start">
+      <View className="flex items-start">
         <Pressable
-          onPress={() => navigation.getParent('LeftDrawer').openDrawer()}>
-          <Feather name="menu" size={24} color="black" />
+          className="flex items-center"
+          onPress={() => navigation.goBack()}>
+          <AntDesign name="close" size={30} color="white" />
         </Pressable>
-        <Image
-          source={require('../assets/img/Reddit_Logo.png')}
-          className="w-20 h-5 ml-2"
-          resizeMode="contain"
-        />
       </View>
 
       {/* Right */}
       <View className="flex-row items-center">
-        <AntDesign name="search1" size={24} color="black" />
+        {/* search */}
+        <AntDesign name="search1" size={24} color="white" />
+        {/* Svg filter */}
+        <View className="ml-3 mr-3">
+          <FilterIcon width={30} height={30} />
+        </View>
+        {/* dots */}
+        <Entypo name="dots-three-horizontal" size={18} color={'#fff'} />
+
         <Pressable
+          className="-ml-2"
           onPress={() => navigation.getParent('RightDrawer').openDrawer()}>
           <Image
             source={{
@@ -42,7 +48,7 @@ const CustomHeader = () => {
           />
           {/* Online status */}
           <View className="w-3 h-3 bg-green-500 rounded-full absolute bottom-0 left-5">
-            <View className="w-full h-full rounded-full border-2 border-white" />
+            <View className="w-full h-full rounded-full border-2 border-[#282828]" />
           </View>
         </Pressable>
       </View>
@@ -50,4 +56,4 @@ const CustomHeader = () => {
   );
 };
 
-export default CustomHeader;
+export default CustomDetailedHeader;

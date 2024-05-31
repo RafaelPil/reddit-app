@@ -1,12 +1,15 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Pressable} from 'react-native';
 import React from 'react';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-import {PostComponentProps} from '../../types';
+import {PostComponentProps, RootStackParamList} from '../../types';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 
 const PostComponent = (props: PostComponentProps) => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
   const {
     redditUsername,
     title,
@@ -16,6 +19,18 @@ const PostComponent = (props: PostComponentProps) => {
     commentsCount,
     userProfileImage,
   } = props;
+
+  const handleToDetailsScreen = () => {
+    navigation.navigate('PostDetailed', {
+      redditUsername,
+      title,
+      body,
+      imageUrl,
+      likesCount,
+      commentsCount,
+      userProfileImage,
+    });
+  };
 
   return (
     <>
@@ -45,7 +60,7 @@ const PostComponent = (props: PostComponentProps) => {
         </View>
 
         {/* Title/Body/Image */}
-        <View className="mt-1">
+        <Pressable className="mt-1" onPress={handleToDetailsScreen}>
           {/* Title */}
           {title && (
             <Text className="font-semibold text-slate-900 text-lg leading-6">
@@ -70,7 +85,7 @@ const PostComponent = (props: PostComponentProps) => {
               />
             </View>
           )}
-        </View>
+        </Pressable>
 
         {/* Buttons Row */}
         <View className="flex flex-row items-center justify-between">
